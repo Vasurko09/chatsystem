@@ -17,6 +17,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://chatsystem-production-8cfc.up.railway.app/'
+]
 
 # Application definition
 
