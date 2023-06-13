@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+        
+        
+
+        .box{
+            background-color:darkslategray;
+            height:500px;
+            width: 390px;
+            flex-direction: column-reverse;
+            white-space:normal;
+            overflow:auto;
+            display:flex;
+            text-overflow:ellipsis;
+            scroll-behavior:smooth;
+            margin-left:auto;
+            margin-right: auto;
+            
+            
+        }
+        #title{
+            color: azure ;
+            background-color: rgb(11, 64, 66);
+            margin-top: -25px;
+            display:flex;
+            height: 50px;
+            width: 390px;
+            margin-left:auto;
+            margin-right: auto;
+            
+            
+            
+
+        }
+
+        .user1{
+      
+        color: #7bddbc;
+        padding-right: 10px;
+        text-align: end;
+        text-align: right; 
+        height:fit-content;
+        overflow-wrap: break-word;
+        direction:ltr;
+        padding-top: 10px;
+        text-shadow: 1px 1px black;
+        font-size: 15px;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        
+    
+       
+            
+        }
+        .user2{
+        
+            
+            color:antiquewhite;
+            text-shadow: 1px 1px black;
+            font-size: 15px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+        #name{
+            padding-top: 5px;
+        }
+        #title1{
+            padding-top: 5px;
+            padding-left: 190px;
+        }
+      
+        #input{
+            height: 23px;
+            width: 270px;
+            background-color: rgb(11, 64, 66);
+            border-style: none;
+            padding-right: 38px;
+            text-align: center;
+            color: beige;
+            
+           
+            
+        }
+        #btn{
+            height: 25px;
+            width:80px;
+            background-color:rgb(20, 115, 118);
+            border-style: none;
+            color: aliceblue;
+          
+        }
+        p{
+            width: 100px;
+        }
+        .test{
+            background-color:darkslategray;
+            height:500px;
+            width:400px;
+            flex-direction: column-reverse;
+            white-space:normal;
+            overflow:auto;
+            text-overflow:ellipsis;
+            scroll-behavior:smooth;
+            display: flex;
+            text-align: end;
+        }
+      
+      
+    </style>
+</head>
+<body>
+    
+    </div class="center">
+        <div id="title">
+            <h5 id="name">user1</h5>
+            <h3 id="title1">chat system</h3>
+        </div>
+        <div class="box">
+
+            
+            <div id="msgs">
+            
+            {%for i in msgs%}
+                {%if i.0 == "_"%}
+                <p class="user2">{{i|slice:"1:"}}</p>
+                
+                {%else%}
+                <h5 class="user1">{{i}}</h5>
+                
+                {%endif%}
+                
+            {%endfor%}
+                
+                
+            
+            </div>
+        
+            
+            
+        </div>
+        
+            
+        <form action="/" style="justify-content:center; display: flex;" method="post" autocomplete="off">
+            {%csrf_token%}
+            
+            <input type="text" id="input" placeholder="type here" name="user1" > 
+            <input type="submit" id="btn" value="send">
+            
+        </form>
+    </div>  
+   
+</body>
+</html>

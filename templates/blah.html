@@ -1,0 +1,61 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.bg{
+			margin: auto;
+			width: 400px;
+			height: 530px;				
+			background-color: rgb(250, 175, 76);
+		}
+		.form{
+			padding-left: 435px;
+			margin-top: -30px;
+			
+		}
+		#message{
+			width: 310px;
+			height: 20px;
+			padding-right: -20px;
+		}
+		#button{
+			height: 25px;
+			padding-left: 20px;
+			padding-right: 20px;
+			font-size: 12px;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		}
+		.bg h5{
+			margin:4px, 4px;
+			padding:4px;
+			width: 400px;
+			
+			overflow-x: hidden;
+			overflow-y: auto;
+			text-align:justify;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	
+	<div class="bg">
+		{%for msg in msgs%}
+		<h5>{{msg.0}}</h5>
+		{%endfor%}
+		
+	</div>
+	<form action="{% url 'vasu' %}" class="form" method="POST">
+		{%csrf_token%}
+		<input id="message" type="text" name="message">
+		<input id="button" type="submit" value="send">
+	</form>
+	
+</body>
+</html>
